@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+import time
+import subprocess
+import os
+import sys
+import re
+# assemble rsync commandline and run it
+rsynccmd  = 'rsync -aP ' + previous_backup_link + ' ' + backupDir + ' ' + os.path.join(current_backup_target,timestamp+"_tmp")
+# print2log("+" + countStr + "+ " + rsynccmd + "\n\n", logDir)
+rsyncproc = subprocess.Popen(rsynccmd,
+                                       shell=True,
+                                       stdin=subprocess.PIPE,
+                                       stdout=subprocess.PIPE,
+)

@@ -1,0 +1,5 @@
+rsync -aP src/ dst
+
+sending incremental file list
+./
+file
